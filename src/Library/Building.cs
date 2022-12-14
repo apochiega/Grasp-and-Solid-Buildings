@@ -7,6 +7,7 @@
 using System;
 using System.Collections;
 
+
 namespace Full_GRASP_And_SOLID.Library
 {
     public class Building
@@ -30,14 +31,32 @@ namespace Full_GRASP_And_SOLID.Library
             this.tasks.Remove(task);
         }
 
-        public void PrintBuilding()
+        public string imprimirBuilding()
         {
-            Console.WriteLine($"Edificio {this.Description}:");
+            string PrintBuilding = "";
+            PrintBuilding += $"Edificio {this.Description}: \n";
             foreach (Task task in this.tasks)
             {
-                Console.WriteLine($"{task.Quantity} de '{task.Material.Description}' " +
-                    $"usando '{task.Equipment.Description}' durante {task.Time}");
+                PrintBuilding += $"{task.Quantity} de '{task.Material.Description}' " +
+                $"usando '{task.Equipment.Description}' durante {task.Time} \n";
             }
+            PrintBuilding += $"El costo de la construcción es de: {this.GetProductionCost()} \n";
+            
+            return PrintBuilding;
+        }
+
+        public double GetProductionCost()
+        {
+            double precioFinal = 0;
+            
+            foreach (Task task in this.tasks)
+            
+            {
+                precioFinal += (task.Material.UnitCost * task.Quantity) + (task.Equipment.HourlyCost * task.Time);
+            }
+            
+            
+            return precioFinal;
         }
     }
 }
