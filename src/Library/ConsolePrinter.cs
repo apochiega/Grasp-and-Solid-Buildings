@@ -3,9 +3,9 @@ using System.Collections;
 
 namespace Full_GRASP_And_SOLID.Library
 {
-    public class ConsolePrinter 
+    public class ConsolePrinter : IPrinter
     {
-        public static void PrintPrecio(Building building)
+        public void PrintBuilding(Building building)
         {
             Console.WriteLine($"Building {building.imprimirBuilding()}:");
         }
