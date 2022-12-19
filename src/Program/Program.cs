@@ -29,17 +29,17 @@ namespace Full_GRASP_And_SOLID
             
             ConsolePrinter consoleprinter = new ConsolePrinter();
             FilePrinter fileprinter = new FilePrinter();
-            FilePrinter2 fileprinter2 = new FilePrinter2();
+           
             
 
             List<IPrinter> printers = new List<IPrinter>();
             printers.Add(consoleprinter);
             printers.Add(fileprinter);
-            printers.Add(fileprinter2);
+            
 
             foreach (IPrinter i in printers)
             {
-                i.PrintBuilding(tower);
+                i.Print(tower);
 
             }
 
