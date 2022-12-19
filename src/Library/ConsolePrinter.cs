@@ -5,9 +5,9 @@ namespace Full_GRASP_And_SOLID.Library
 {
     public class ConsolePrinter : IPrinter
     {
-        public void PrintBuilding(Building building)
+        public void Print(IPrintable printable)
         {
-            Console.WriteLine($"Building {building.imprimirBuilding()}:");
+            Console.WriteLine(printable.imprimirBuilding());
         }
         
     }
