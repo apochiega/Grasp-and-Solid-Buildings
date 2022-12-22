@@ -33,6 +33,9 @@ namespace Full_GRASP_And_SOLID
             
 
             List<IPrinter> printers = new List<IPrinter>();
+            ICostable costable = tower;
+            costable.GetProductionCost();
+            
             printers.Add(consoleprinter);
             printers.Add(fileprinter);
             
@@ -42,6 +45,7 @@ namespace Full_GRASP_And_SOLID
                 i.Print(tower);
 
             }
+            IPrinter.costable()
 
 
         }
@@ -87,5 +91,7 @@ namespace Full_GRASP_And_SOLID
             var query = from Tool equipment in toolCatalog where equipment.Description == description select equipment;
             return query.FirstOrDefault();
         }
+
+        
     }
 }
